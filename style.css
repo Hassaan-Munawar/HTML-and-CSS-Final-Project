@@ -1,0 +1,149 @@
+@media (max-width:576px) {
+    .cardbuttons {
+        width: 100px !important;
+    }
+
+    .branch {
+        padding-top: 10px;
+        width: 280px !important;
+    }
+
+    .branch2 {
+        width: 280px !important;
+    }
+
+    .parts {
+        width: 350px;
+    }
+   
+}
+.black {
+    background-color: black;
+}
+
+.font1 {
+    color: white;
+
+    text-align: center;
+    font-size: 40px;
+}
+
+.font2 {
+    font-weight: bolder;
+    font-style: italic;
+    font-size: 50px;
+    color: white;
+    text-align: center;
+}
+
+.font3 {
+    text-align: center;
+    color: white;
+}
+
+.radius {
+    border: 1px solid white;
+    border-radius: 50px !important;
+}
+
+.cardbuttons {
+    color: white;
+    border: 1px solid white;
+    background-color: black;
+    border-radius: 50px;
+    width: 200px;
+    text-align: center;
+    height: 40px;
+    margin-left: 10px;
+}
+
+.islamabad {
+    letter-spacing: 5px;
+    color: brown;
+}
+
+.white {
+    color: white;
+}
+
+
+
+.get {
+    background-color: black;
+    border: 1px solid white;
+    border-radius: 50px;
+    color: white;
+    width: 200px;
+    text-align: center;
+    height: 50px;
+}
+
+span {
+    display: inline-block;
+}
+
+.parts {
+    width: 400px;
+}
+
+.font4 {
+    font-weight: bolder;
+    color: white;
+    font-size: 30px;
+    letter-spacing: normal;
+
+}
+
+.font5 {
+    color: white;
+    font-size: 25px;
+}
+
+
+
+#green {
+    background-color: greenyellow;
+}
+
+.soon {
+    color: white;
+    font-size: 25px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.maindiv5 {
+    padding-left: 50px;
+}
+@media (min-width:992px) {
+    .maindiv6 {
+        padding-left: 30px;
+    }
+    .margin {
+        margin-left: 400px;
+    }
+
+    .maindiv3 {
+        padding-left: 270px;
+    }
+
+    .maindiv4 {
+        padding-left: 280px;
+    }
+
+    .branch {
+        width: 600px;
+        padding-left: 10px;
+        float: inline-start;
+    }
+
+    .branch2 {
+        width: 600px;
+        padding-right: 40px;
+    }
+   
+}
+    

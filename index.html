@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Salt n peper</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="shortcut icon" href="data:image/png;base64,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" type="image/x-icon">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+</head>
+
+<body class="black container-fluid">
+  <nav class="navbar navbar-expand-lg bg-dark border-bottom border-body " data-bs-theme="dark">
+    <div class="container-fluid">
+      <img width="165px" src="https://images-beta.tossdown.com/site/65b73fb7-2706-4440-87b9-9555fcd0ba80.webp"
+        alt="http://placehold.it/150x50?text=Logo" class="web-logo">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active margin " aria-current="page" href="#">Home</a>
+          </li>
+        </ul>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">About Us</a>
+            </li>
+          </ul>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Publications</a>
+              </li>
+            </ul>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="#">Feedback</a>
+                </li>
+              </ul>
+              <form>
+                <button class="btn btn-outline-light radius" type="submit">Get a Franchise</button>
+                <button class="btn btn-danger radius back" type="submit">Order Online</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+      </p2>
+    </div>
+  </nav>
+  <div id="carouselExampleAutoplaying" class="carousel slide container-fluid" data-bs-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="./slider/slider 1.png" class="d-block w-100" alt="...">
+      </div>
+      <div class="carousel-item">
+        <img src="./slider/Slider 2.png" class="d-block w-100" alt="...">
+      </div>
+      <div class="carousel-item">
+        <img src="./slider/Slider 3.png" class="d-block w-100" alt="...">
+      </div>
+      <div class="carousel-item">
+        <img src="./slider/slider 4.png" class="d-block w-100" alt="...">
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying"
+      data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next ink" type="button" data-bs-target="#carouselExampleAutoplaying"
+      data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+  <br><br><br>
+  <p2>
+    <p class="font1 container-fluid">Welcome to <p2 class="font2">Salt'n Pepper</p2> <br> Restaurants! Our Brands</p>
+    <p class="font3 container-fluid">Please click our brands below for further information, reservations or to order
+      online!</p>
+  </p2>
+  <br><br>
+  <div class="maindiv3 row">
+    <div class="row row-cols-1 row-cols-md-4 g-4 container-fluid">
+      <div class="col-4">
+        <div class="card">
+          <img src="./Card/card 1.png" class="card-img-top flight" alt="...">
+          <div class="card-body">
+          </div>
+        </div>
+      </div>
+      <div class="col-4">
+        <div class="card">
+          <img src="./Card/card 2.png" class="card-img-top" alt="...">
+          <div class="card-body">
+          </div>
+        </div>
+      </div>
+      <div class="col-4">
+        <div class="card">
+          <img src="./Card/card 3.png" class="card-img-top" alt="...">
+          <div class="card-body">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <br>
+  <div class="maindiv4">
+    <button class="cardbuttons">Order Now</button>
+    <button class="cardbuttons">Order Now</button>
+    <button class="cardbuttons">Reseve </button>
+  </div>
+  <br><br><br><br><br>
+  <p class="font2">Salt'n Pepper</p>
+  <p class="font1">Restaurant Franchises</p>
+  <p class="font3">Each of our franchises are individually managed. For further details, kindly contact them directly.
+  </p>
+  <br><br>
+  <div class="maindiv5 row container-fluid">
+    <span class="col-12 col-md-6">
+      <p class="islamabad">ISLAMABAD</p>
+      <p>
+        <p2 class="font2">Salt'n Pepper</p2> &nbsp;&nbsp;<p2 class="font1">Restaurant</p2>
+      </p>
+      <p class="white">Plot# 55, Shabbir Plaza, Blue Area, F-6, Islamabad</p>
+      <p class="white">Ph: 051-2604904-6</p>
+      <button class="get">Get Directions</button>
+    </span>
+    <span class="col-12 col-md-6">
+      <img class="branch ultra" src="./Branches/Branch.png" alt="">
+    </span>
+  </div>
+  <br><br><br><br><br>
+  <div class="maindiv5 row">
+    <span class="col-12 col-md-6">
+      <img class="branch2" src="./Branches/Branch 2.png" alt="">
+    </span>
+    <span class="col-12 col-md-6">
+      <p class="islamabad">FAISALABAD</p>
+      <p>
+        <p2 class="font2">Salt'n Pepper</p2> &nbsp;&nbsp;<p2 class="font1">Restaurant</p2>
+      </p>
+      <p class="white">4-Kohinoor City, Faisalabad</p>
+      <p class="white">Ph: 041-8711404</p>
+      <button class="get">Get Directions</button>
+    </span>
+  </div>
+  <br><br><br><br><br>
+  <div class="maindiv5 ">
+    <span>
+      <p class="islamabad">BHAWALPUR</p>
+      <p>
+        <p2 class="font2">Salt'n Pepper</p2> &nbsp;&nbsp;<p2 class="font1">Restaurant</p2>
+      </p>
+      <p class="white">D.C Chowk, opposite Commissioner House, Bahawalpur</p>
+      <p class="white">Ph: 062-2740271-2</p>
+      <button class="get">Get Directions</button>
+    </span>
+    <span>
+      <img class="branch" src="./Branches/Branch 3.png" alt="">
+    </span>
+  </div>
+  <br><br><br><br>
+  <p class="font3">
+    <p2 class="font2">Salt'n Pepper</p2><br>
+    <p2 class="font1">Express Franchises</p2>
+  </p>
+  <div class="row row-cols-1 row-cols-md-3 g-4 container-fluid">
+    <div class="col">
+      <div class="card">
+        <img src="./Express Branches/Express 1.png" class="card-img-top" alt="...">
+      </div>
+    </div>
+    <div class="col">
+      <div class="card">
+        <img src="./Express Branches/Express 2.png" class="card-img-top" alt="...">
+      </div>
+    </div>
+    <div class="col">
+      <div class="card">
+        <img src="./Express Branches/Express 3.png" class="card-img-top" alt="...">
+      </div>
+    </div>
+  </div>
+  <div class="maindiv6">
+    <span class="parts ">
+      <br>
+      <p class="islamabad">PACKAGES MALL <br>
+        <p2 class="font4">Salt'n Pepper</p2>&nbsp;<p2 class="font5">Express</p2>
+      </p>
+      <p class="white">D.C Chowk, Commissioner House</p>
+      <p class="white">Ph: 062-2740271-2</p>
+      <button class="get">Get Directions</button>
+    </span>
+    <Span class="parts">
+      <br>
+      <p class="islamabad">EMPORIUM MALL<br>
+        <p2 class="font4">Salt'n Pepper</p2>&nbsp;<p2 class="font5">Express</p2>
+      </p>
+      <p class="white">D.C Chowk, Commissioner House</p>
+      <p class="white">Ph: 062-2740271-2</p>
+      <button class="get">Get Directions</button>
+    </Span>
+    <span>
+      <br>
+      <p class="islamabad">GUJRANWALA<br>
+        <p2 class="font4">Salt'n Pepper</p2>&nbsp;<p2 class="font5">Express</p2>
+      </p>
+      <p class="white">D.C Chowk, Commissioner House</p>
+      <p class="white">Ph: 062-2740271-2</p>
+      <button class="get">Get Directions</button>
+    </span>
+  </div>
+  <br><br>
+  <div class="row row-cols-1 row-cols-md-3 g-4 container-fluid">
+    <div class="col">
+      <div class="card">
+        <img src="./Express Branches/Express 1.png" class="card-img-top" alt="...">
+      </div>
+    </div>
+    <div class="col">
+      <div class="card">
+        <img src="./Express Branches/Express 2.png" class="card-img-top" alt="...">
+      </div>
+    </div>
+    <div class="col">
+      <div class="card">
+        <img src="./Express Branches/Express 3.png" class="card-img-top" alt="...">
+      </div>
+    </div>
+  </div>
+  <div class="maindiv6">
+    <span class="parts">
+      <br>
+      <p class="islamabad">PACKAGES MALL <br>
+        <p2 class="font4">Salt'n Pepper</p2>&nbsp;<p2 class="font5">Express</p2>
+      </p>
+      <p class="white">D.C Chowk, Commissioner House</p>
+      <p class="white">Ph: 062-2740271-2</p>
+      <button class="get">Get Directions</button>
+    </span>
+    <Span class="parts">
+      <br>
+      <p class="islamabad">EMPORIUM MALL<br>
+        <p2 class="font4">Salt'n Pepper</p2>&nbsp;<p2 class="font5">Express</p2>
+      </p>
+      <p class="white">D.C Chowk, Commissioner House</p>
+      <p class="white">Ph: 062-2740271-2</p>
+      <button class="get">Get Directions</button>
+    </Span>
+    <span>
+      <br>
+      <p class="islamabad">GUJRANWALA<br>
+        <p2 class="font4">Salt'n Pepper</p2>&nbsp;<p2 class="font5">Express</p2>
+      </p>
+      <p class="white">D.C Chowk, Commissioner House</p>
+      <p class="white">Ph: 062-2740271-2</p>
+      <button class="get">Get Directions</button>
+    </span>
+  </div>
+  <br><br>
+  <div class="row row-cols-1 row-cols-md-3 g-4 container-fluid">
+    <div class="col">
+      <div class="card">
+        <img src="./Express Branches/Express 1.png" class="card-img-top" alt="...">
+      </div>
+    </div>
+    <div class="col">
+      <div class="card">
+        <img src="./Express Branches/Express 2.png" class="card-img-top" alt="...">
+      </div>
+    </div>
+    <div class="col">
+      <div class="card">
+        <img src="./Express Branches/Express 3.png" class="card-img-top" alt="...">
+      </div>
+    </div>
+  </div>
+  <div class="maindiv6">
+    <span class="parts">
+      <br>
+      <p class="islamabad">PACKAGES MALL <br>
+        <p2 class="font4">Salt'n Pepper</p2>&nbsp;<p2 class="font5">Express</p2>
+      </p>
+      <p class="white">D.C Chowk, Commissioner House</p>
+      <p class="white">Ph: 062-2740271-2</p>
+      <button class="get">Get Directions</button>
+    </span>
+    <Span class="parts">
+      <br>
+      <p class="islamabad">EMPORIUM MALL<br>
+        <p2 class="font4">Salt'n Pepper</p2>&nbsp;<p2 class="font5">Express</p2>
+      </p>
+      <p class="white">D.C Chowk, Commissioner House</p>
+      <p class="white">Ph: 062-2740271-2</p>
+      <button class="get">Get Directions</button>
+    </Span>
+    <span>
+      <br>
+      <p class="islamabad">GUJRANWALA<br>
+        <p2 class="font4">Salt'n Pepper</p2>&nbsp;<p2 class="font5">Express</p2>
+      </p>
+      <p class="white">D.C Chowk, Commissioner House</p>
+      <p class="white">Ph: 062-2740271-2</p>
+      <button class="get">Get Directions</button>
+    </span>
+  </div>
+  <br><br>
+  <p class="font3">
+    <p2 class="font2">Salt'n Pepper</p2><br>
+    <p2 class="font1">Village Franchises</p2>
+  </p>
+  <br>
+  <div class="maindiv5">
+    <span>
+      <img class="branch2" src="./Branches/Branch 2.png" alt="">
+    </span>
+    <span>
+      <p class="islamabad">FAISALABAD</p>
+      <p>
+        <p2 class="font2">Salt'n Pepper</p2> &nbsp;&nbsp;<p2 class="font1">Restaurant</p2>
+      </p>
+      <p class="white">4-Kohinoor City, Faisalabad</p>
+      <p class="white">Ph: 041-8711404</p>
+      <button id="green" class="get">Get Directions</button>
+    </span>
+  </div>
+  <br>
+  <p class="font3">
+    <p2 class="font2">Salt'n Pepper</p2><br>
+    <p2 class="font1">Express Franchises</p2>
+    <p2 class="soon">(Opening Soon)</p2>
+  </p>
+  <br>
+  <div class="row row-cols-1 row-cols-md-3 g-4 container-fluid">
+    <div class="col">
+      <div class="card h-100">
+        <img src="./Card/Card 1a.png" class="card-img-top" alt="...">
+      </div>
+    </div>
+    <div class="col">
+      <div class="card h-100">
+        <img src="./Card/Card 1a.png" class="card-img-top" alt="...">
+      </div>
+    </div>
+    <div class="col">
+      <div class="card h-100">
+        <img src="./Card/Card 1a.png" class="card-img-top" alt="...">
+      </div>
+    </div>
+  </div>
+  <br>
+  <div class="row row-cols-1 row-cols-md-3 g-4 container-fluid">
+    <div class="col">
+      <div class="card h-100">
+        <img src="./Card/Card 1a.png" class="card-img-top" alt="...">
+      </div>
+    </div>
+    <div class="col">
+      <div class="card h-100">
+        <img src="./Card/Card 1a.png" class="card-img-top" alt="...">
+      </div>
+    </div>
+    <div class="col">
+      <div class="card h-100">
+        <img src="./Card/Card 1a.png" class="card-img-top" alt="...">
+      </div>
+    </div>
+  </div>
+  <br>
+  <div class="row row-cols-1 row-cols-md-3 g-4 container-fluid">
+    <div class="col">
+      <div class="card h-100">
+        <img src="./Card/Card 1a.png" class="card-img-top" alt="...">
+      </div>
+    </div>
+    <div class="col">
+      <div class="card h-100">
+        <img src="./Card/Card 1a.png" class="card-img-top" alt="...">
+      </div>
+    </div>
+    <div class="col">
+      <div class="card h-100">
+        <img src="./Card/Card 1a.png" class="card-img-top" alt="...">
+      </div>
+    </div>
+  </div>
+  <br><br>
+  <footer class="text-center text-lg-start bg-body-dark text-light">
+    <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
+      <div class="me-5 d-none d-lg-block">
+        <span>Get connected with us on social networks:</span>
+      </div>
+      <div>
+        <a href="" class="me-4 text-reset">
+          <i class="fab fa-facebook-f"></i>
+        </a>
+        <a href="" class="me-4 text-reset">
+          <i class="fab fa-twitter"></i>
+        </a>
+        <a href="" class="me-4 text-reset">
+          <i class="fab fa-google"></i>
+        </a>
+        <a href="" class="me-4 text-reset">
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a href="" class="me-4 text-reset">
+          <i class="fab fa-linkedin"></i>
+        </a>
+        <a href="" class="me-4 text-reset">
+          <i class="fab fa-github"></i>
+        </a>
+      </div>
+    </section>
+    <section class="">
+      <div class="container text-center text-md-start mt-5">
+
+        <div class="row mt-3">
+
+          <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+
+            <h6 class="text-uppercase fw-bold mb-4">
+              <i class="fas fa-gem me-3"></i>Company name
+            </h6>
+            <p>
+              Here you can use rows and columns to organize your footer content. Lorem ipsum
+              dolor sit amet, consectetur adipisicing elit.
+            </p>
+          </div>
+          <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+            <h6 class="text-uppercase fw-bold mb-4">
+              Products
+            </h6>
+            <p>
+              <a href="#!" class="text-reset">Angular</a>
+            </p>
+            <p>
+              <a href="#!" class="text-reset">React</a>
+            </p>
+            <p>
+              <a href="#!" class="text-reset">Vue</a>
+            </p>
+            <p>
+              <a href="#!" class="text-reset">Laravel</a>
+            </p>
+          </div>
+          <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+            <h6 class="text-uppercase fw-bold mb-4">
+              Useful links
+            </h6>
+            <p>
+              <a href="#!" class="text-reset">Pricing</a>
+            </p>
+            <p>
+              <a href="#!" class="text-reset">Settings</a>
+            </p>
+            <p>
+              <a href="#!" class="text-reset">Orders</a>
+            </p>
+            <p>
+              <a href="#!" class="text-reset">Help</a>
+            </p>
+          </div>
+          <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+            <h6 class="text-uppercase fw-bold mb-4">Contact</h6>
+            <p><i class="fas fa-home me-3"></i> New York, NY 10012, US</p>
+            <p>
+              <i class="fas fa-envelope me-3"></i>
+              info@example.com
+            </p>
+            <p><i class="fas fa-phone me-3"></i> + 01 234 567 88</p>
+            <p><i class="fas fa-print me-3"></i> + 01 234 567 89</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
